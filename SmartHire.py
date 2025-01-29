@@ -8,8 +8,15 @@ import seaborn as sns
 import os
 from docx import Document  
 # Load the model and vectorizer
-model = joblib.load("C:\\Users\\LENOVO\\Desktop\\DS-P490(GROUP-5)\\modelDT.pkl")  # Update with your model's filename
-vectorizer = joblib.load("C:\\Users\\LENOVO\\Desktop\\DS-P490(GROUP-5)\\vector.pkl")  # Update with your vectorizer's filename
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load model using relative path
+model_path = os.path.join(BASE_DIR, "modelDT.pkl")
+vectorizer_path = os.path.join(BASE_DIR, "vector.pkl")
+
+# Load files
+model = joblib.load(model_path)
+vectorizer = joblib.load(vectorizer_path)
 
 # App Title
 st.set_page_config(page_title="AI-Powered Resume Classification", layout="wide")
