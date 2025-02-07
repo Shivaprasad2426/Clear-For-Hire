@@ -114,23 +114,6 @@ with tabs[1]:
     ax.axis("equal")
     st.pyplot(fig)
 
-# Feedback
-with tabs[2]:
-    st.subheader("Feedback Section")
-    feedback = st.text_area("Let us know if the classification was incorrect or if you have suggestions.")
-    if st.button("Submit Feedback"):
-        feedback_path = "feedback.csv"
-        if os.path.exists(feedback_path):
-            feedback_df = pd.read_csv(feedback_path)
-        else:
-            feedback_df = pd.DataFrame(columns=["Feedback"])
-
-        feedback_df = feedback_df.append({"Feedback": feedback}, ignore_index=True)
-        feedback_df.to_csv(feedback_path, index=False)
-        st.success("Thank you for your feedback!")
-
-        st.write("### Feedback Overview")
-        st.table(feedback_df.tail(5))
 
 # Insights Tab
 with tabs[3]:
