@@ -20,7 +20,7 @@ vectorizer = joblib.load(vectorizer_path)
 
 # App Title
 st.set_page_config(page_title="AI-Powered Resume Classification", layout="wide")
-st.title("Clear For Hire-AI-Powered Resume Classification and Analytics Hub")
+st.title("SmartHire-AI-Powered Resume Classification and Analytics Hub")
 
 # Sidebar Header
 st.sidebar.header("Options")
